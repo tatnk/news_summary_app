@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <h2>Search Results</h2>
+    
+    {% if articles %}
+        <ul>
+            {% for article in articles %}
+                <li>
+                    <h3>{{ article.title }}</h3>
+                    <p>{{ article.description }}</p>
+                    <a href="/summary/{{ article.id }}">Read Summary</a>
+                    <br>
+                    <a href="{{ article.url }}" target="_blank">Read Full Article</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No articles found for the given keyword.</p>
+    {% endif %}
+    
+    <a href="/">Go back to search</a>
+{% endblock %}

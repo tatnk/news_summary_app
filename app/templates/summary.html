@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <h2>Article Summary</h2>
+    
+    <h3>{{ article.title }}</h3>
+    
+    <p><strong>Summary:</strong></p>
+    <p>{{ summary }}</p>
+    
+    <p><a href="{{ article.url }}" target="_blank">Read Full Article</a></p>
+    
+    <a href="/">Go back to search</a>
+{% endblock %}
